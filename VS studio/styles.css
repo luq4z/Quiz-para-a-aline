@@ -1,0 +1,183 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #ffe6f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe6f2;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    max-width: 209px;
+    height: auto;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    animation: fadeIn 1s;
+    margin-top: 60px; /* Ajuste para colocar a caixa mais para cima */
+    height: auto; /* Ajuste automático da altura */
+}
+
+.quiz-container {
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Adicione esta regra para aumentar o tamanho da fonte das perguntas */
+.question-container p {
+    font-size: 20px; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff66b2;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #ff3385;
+}
+
+.hidden {
+    display: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.option-container {
+    position: relative;
+    padding-left: 5px; /* Aproximando ainda mais o boneco das opções */
+    margin-bottom: 10px;
+}
+
+.pointer-image {
+    position: absolute;
+    top: 7%;
+    left: +69px; /* Ajuste para posicionar corretamente a imagem do pointer */
+    transform: translateY(-50%);
+    display: none;
+    transition: all 0.3s ease; /* Adicionando transição suave */
+    
+    /* Ajustando o tamanho */
+    width: 80px; /* Aumenta o tamanho do ícone */
+    height: auto; /* Mantém a proporção */
+}
+
+.option-container button:hover + .pointer-image {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.incorrect {
+    color: red;
+    font-weight: bold;
+    animation: shake 0.5s;
+    font-size: 24px; /* Aumenta o tamanho da fonte das mensagens de erro */
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+    animation: fadeIn 1s;
+    font-size: 24px; /* Aumenta o tamanho da fonte das mensagens de acerto */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.timeline-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.timeline-background {
+    background-color: #ffccf2;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.timeline-button {
+    padding: 10px;
+}
+
+/* Estilo para o botão secreto */
+.secret-button {
+    background-color: #ff66b2;
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto; /* Alinha o botão à esquerda */
+}
+
+.secret-button:hover {
+    background-color: #ff3385;
+}
+
+.secret-image {
+    max-width: 70%;
+    height: auto;
+    margin-top: 10px;
+    transition: opacity 0.3s ease-in-out;
+}
